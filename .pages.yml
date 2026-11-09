@@ -1,0 +1,89 @@
+# Settings for the volunteer website editor (Pages CMS, https://app.pagescms.org).
+# This file decides which forms volunteers see. Claude maintains it.
+
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: events
+    label: Events
+    description: Add, change or remove events. Past events move to a "Past events" list on their own.
+    type: collection
+    path: _events
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, location]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, label: Event name, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: time, label: Time, type: string, description: "For example: 7:00 PM or 6:30 to 8:00 PM" }
+      - { name: location, label: Location, type: string, description: "Place name and address" }
+      - { name: body, label: Details, type: rich-text }
+
+  - name: home
+    label: Home page
+    type: file
+    path: index.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: home }
+      - { name: title, type: string, hidden: true, default: Home }
+      - { name: hero_heading, label: Big headline, type: string, required: true }
+      - { name: hero_text, label: Text under the headline, type: text }
+      - { name: hero_image, label: Background photo (optional), type: image }
+      - { name: button_text, label: Button text, type: string, description: "Leave empty to hide the button" }
+      - { name: button_link, label: Button link, type: string, description: "A page on this site like /get-involved/ or a full web address" }
+      - { name: body, label: Main text, type: rich-text }
+
+  - name: about
+    label: About page
+    type: file
+    path: about.md
+    fields: &page_fields
+      - { name: layout, type: string, hidden: true, default: page }
+      - { name: title, label: Page title, type: string, required: true }
+      - { name: intro, label: Short intro under the title, type: string }
+      - { name: body, label: Page text, type: rich-text }
+
+  - name: events-page
+    label: Events page intro
+    type: file
+    path: events.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: events }
+      - { name: title, label: Page title, type: string, required: true }
+      - { name: intro, label: Short intro under the title, type: string }
+      - { name: body, label: Extra text above the event list (optional), type: rich-text }
+
+  - name: get-involved
+    label: Get Involved page
+    type: file
+    path: get-involved.md
+    fields: *page_fields
+
+  - name: contact
+    label: Contact page
+    type: file
+    path: contact.md
+    fields: *page_fields
+
+  - name: settings
+    label: Site settings
+    description: Group name, email, social links and sign-up links used across the whole site.
+    type: file
+    path: _data/settings.yml
+    fields:
+      - { name: name, label: Group name, type: string, required: true }
+      - { name: tagline, label: One-line description, type: string }
+      - { name: logo, label: Logo (optional), type: image }
+      - { name: email, label: Contact email, type: string }
+      - { name: signup_link, label: Volunteer sign-up form link, type: string, description: "For example a Google Form link. Leave empty to hide the button." }
+      - { name: donate_link, label: Donation page link, type: string, description: "Leave empty to hide the button." }
+      - { name: facebook, label: Facebook page link, type: string }
+      - { name: instagram, label: Instagram link, type: string }
+      - { name: footer_note, label: Footer text, type: text }

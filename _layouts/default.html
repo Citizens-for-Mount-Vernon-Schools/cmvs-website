@@ -1,0 +1,51 @@
+{%- assign s = site.data.settings -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.title != "Home" %}{{ page.title }} | {% endif %}{{ s.name }}</title>
+  <meta name="description" content="{{ page.intro | default: page.hero_text | default: s.tagline | strip_html | escape }}">
+  <meta property="og:title" content="{{ page.title | default: s.name | escape }}">
+  <meta property="og:description" content="{{ page.intro | default: page.hero_text | default: s.tagline | strip_html | escape }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        {% if s.logo != "" and s.logo %}<img src="{{ s.logo | relative_url }}" alt="" class="brand-logo">{% else %}<span class="brand-mark" aria-hidden="true">CMVS</span>{% endif %}
+        <span class="brand-name">{{ s.name }}</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        {% for item in site.data.navigation %}
+          {%- assign item_url = item.url | relative_url -%}
+          <a href="{{ item_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>{{ s.name }}</strong>
+        <p>{{ s.footer_note }}</p>
+      </div>
+      <div class="footer-links">
+        {% if s.email != "" %}<a href="mailto:{{ s.email }}">{{ s.email }}</a>{% endif %}
+        {% if s.facebook != "" %}<a href="{{ s.facebook }}">Facebook</a>{% endif %}
+        {% if s.instagram != "" %}<a href="{{ s.instagram }}">Instagram</a>{% endif %}
+      </div>
+    </div>
+  </footer>
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body>
+</html>

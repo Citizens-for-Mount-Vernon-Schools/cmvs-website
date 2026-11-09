@@ -1,0 +1,3 @@
+{%- comment -%}Turns a link typed in the editor into a working URL.{%- endcomment -%}
+{%- assign l = include.url | strip -%}
+{%- if l contains '://' or l contains 'mailto:' or l contains 'tel:' -%}{{ l }}{%- else -%}{{ l | relative_url }}{%- endif -%}

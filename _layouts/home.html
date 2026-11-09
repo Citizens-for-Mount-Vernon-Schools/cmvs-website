@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<section class="hero{% if page.hero_image != '' and page.hero_image %} has-image{% endif %}"{% if page.hero_image != '' and page.hero_image %} style="--hero-image: url('{{ page.hero_image | relative_url }}')"{% endif %}>
+  <div class="wrap hero-inner">
+    <h1>{{ page.hero_heading }}</h1>
+    <p class="lead">{{ page.hero_text }}</p>
+    {% if page.button_text != "" and page.button_text %}
+      <a class="button" href="{% include link.html url=page.button_link %}">{{ page.button_text }}</a>
+    {% endif %}
+  </div>
+</section>
+
+<div class="wrap home-grid">
+  <div class="prose">
+    {{ content }}
+  </div>
+  <aside class="card">
+    <h2>Upcoming events</h2>
+    {% assign events = site.events | sort: "date" %}
+    <ul class="event-mini" data-events>
+      {% for e in events %}
+        <li data-date="{{ e.date | date: '%Y-%m-%d' }}">
+          <span class="when">{{ e.date | date: "%b %-d" }}{% if e.time %} · {{ e.time }}{% endif %}</span>
+          <span class="what">{{ e.title }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="empty" hidden>No events scheduled right now. Check back soon!</p>
+    <a href="{{ '/events/' | relative_url }}">See all events →</a>
+  </aside>
+</div>

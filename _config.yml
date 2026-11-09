@@ -1,0 +1,23 @@
+# Technical settings for the website. Volunteers: you don't need to edit this file.
+# Everyday content (group name, email, links) lives in _data/settings.yml
+# and is editable in the website editor under "Site settings".
+
+title: Citizens for Mount Vernon Schools
+# When the site lives at https://<owner>.github.io/<repo>, baseurl is "/<repo>".
+# When a custom domain is added, change this to "".
+baseurl: ""
+url: ""
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  events:
+    output: false
+
+exclude:
+  - README.md
+  - EDITING-GUIDE.md
+  - .pages.yml
+  - Gemfile
+  - Gemfile.lock
