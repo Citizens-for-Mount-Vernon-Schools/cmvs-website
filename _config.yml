@@ -5,8 +5,8 @@
 title: Citizens for Mount Vernon Schools
 # When the site lives at https://<owner>.github.io/<repo>, baseurl is "/<repo>".
 # When a custom domain is added, change this to "".
-baseurl: ""
-url: ""
+baseurl: "/cmvs-website"
+url: "https://citizens-for-mount-vernon-schools.github.io"
 
 markdown: kramdown
 permalink: pretty
