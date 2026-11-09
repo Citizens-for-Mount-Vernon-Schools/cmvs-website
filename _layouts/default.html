@@ -50,7 +50,7 @@
       <div>
         <strong>{{ s.name }}</strong>
         <p>{{ s.mailing_address }}</p>
-        {% if s.email != "" %}<p><a href="mailto:{{ s.email }}">{{ s.email }}</a></p>{% endif %}
+        {% if s.email != "" %}<p><a href="mailto:{{ s.email }}">{{ s.email }}</a></p>{% else %}<p>Email address coming soon</p>{% endif %}
       </div>
       <div class="footer-links">
         {% if s.facebook != "" %}<a href="{{ s.facebook }}">Facebook</a>{% endif %}

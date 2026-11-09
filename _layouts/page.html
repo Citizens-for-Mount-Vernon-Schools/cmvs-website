@@ -15,6 +15,7 @@ layout: default
     <div class="actions">
       {% if s.signup_link != "" %}<a class="button dark" href="{{ s.signup_link }}">Sign up to volunteer</a>{% endif %}
       {% if s.email != "" %}<a class="button {% if s.signup_link != '' %}outline{% else %}dark{% endif %}" href="mailto:{{ s.email }}?subject=I%20want%20to%20help%20with%20the%20levy">Email us to help</a>{% endif %}
+      {% if s.email == "" and s.signup_link == "" %}<p class="placeholder-note">Volunteer sign-up is coming soon. Check back shortly, or come to one of our <a href="{{ '/events/' | relative_url }}">events</a>.</p>{% endif %}
     </div>
   {% endif %}
 
@@ -25,7 +26,7 @@ layout: default
 
   {% if page.url == "/contact/" %}
     <div class="card contact-card">
-      {% if s.email != "" %}<p><strong>Email:</strong> <a href="mailto:{{ s.email }}">{{ s.email }}</a></p>{% endif %}
+      <p><strong>Email:</strong> {% if s.email != "" %}<a href="mailto:{{ s.email }}">{{ s.email }}</a>{% else %}<em>coming soon</em>{% endif %}</p>
       <p><strong>Mail:</strong> Citizens for Mount Vernon Schools, {{ s.mailing_address }}</p>
       {% if s.facebook != "" %}<p><strong>Facebook:</strong> <a href="{{ s.facebook }}">{{ s.facebook }}</a></p>{% endif %}
       {% if s.instagram != "" %}<p><strong>Instagram:</strong> <a href="{{ s.instagram }}">{{ s.instagram }}</a></p>{% endif %}

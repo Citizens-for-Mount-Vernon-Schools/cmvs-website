@@ -26,8 +26,11 @@ layout: default
     <ul class="build-grid">
       {% for b in page.builds %}
         <li class="build">
-          <img src="{{ '/assets/images/check.svg' | relative_url }}" alt="" width="44" height="44">
-          <div><h3>{{ b.title }}</h3><p>{{ b.text }}</p></div>
+          <div class="build-head">
+            <img src="{{ '/assets/images/check.svg' | relative_url }}" alt="" width="40" height="40">
+            <h3>{{ b.title }}</h3>
+          </div>
+          <p>{{ b.text }}</p>
         </li>
       {% endfor %}
     </ul>

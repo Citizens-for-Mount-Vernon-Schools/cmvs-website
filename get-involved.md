@@ -18,4 +18,4 @@ Many voters haven't heard about the levy yet. Some have questions. Others will s
 
 ## Sign up
 
-Email us and tell us how you'd like to help. We'll get you connected.
+Tell us how you'd like to help and we'll get you connected.
