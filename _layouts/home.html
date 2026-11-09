@@ -1,32 +1,65 @@
 ---
 layout: default
 ---
-<section class="hero{% if page.hero_image != '' and page.hero_image %} has-image{% endif %}"{% if page.hero_image != '' and page.hero_image %} style="--hero-image: url('{{ page.hero_image | relative_url }}')"{% endif %}>
+<section class="hero">
   <div class="wrap hero-inner">
-    <h1>{{ page.hero_heading }}</h1>
-    <p class="lead">{{ page.hero_text }}</p>
-    {% if page.button_text != "" and page.button_text %}
-      <a class="button" href="{% include link.html url=page.button_link %}">{{ page.button_text }}</a>
-    {% endif %}
+    <div class="hero-art">
+      <img src="{{ '/assets/images/vote-for-our-kids.png' | relative_url }}" alt="Hand-drawn smiling kid with arms raised: Vote For Our Kids" width="410" height="515">
+    </div>
+    <div class="hero-copy">
+      {% if page.vote_badge %}<p class="vote-badge">{{ page.vote_badge }}</p>{% endif %}
+      {% if page.hero_kicker %}<p class="kicker">{{ page.hero_kicker }}</p>{% endif %}
+      <h1>{{ page.hero_heading }}</h1>
+      <p class="lead">{{ page.hero_text }}</p>
+      <div class="actions">
+        {% if page.button_text and page.button_text != "" %}<a class="button dark" href="{% include link.html url=page.button_link %}">{{ page.button_text }}</a>{% endif %}
+        {% if page.button2_text and page.button2_text != "" %}<a class="button light" href="{% include link.html url=page.button2_link %}">{{ page.button2_text }}</a>{% endif %}
+      </div>
+    </div>
   </div>
 </section>
+
+{% if page.builds %}
+<section class="builds">
+  <div class="wrap">
+    <h2 class="section-title">{{ page.builds_heading }}</h2>
+    <ul class="build-grid">
+      {% for b in page.builds %}
+        <li class="build">
+          <img src="{{ '/assets/images/check.svg' | relative_url }}" alt="" width="44" height="44">
+          <div><h3>{{ b.title }}</h3><p>{{ b.text }}</p></div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
 
 <div class="wrap home-grid">
   <div class="prose">
     {{ content }}
   </div>
-  <aside class="card">
-    <h2>Upcoming events</h2>
-    {% assign events = site.events | sort: "date" %}
-    <ul class="event-mini" data-events>
-      {% for e in events %}
-        <li data-date="{{ e.date | date: '%Y-%m-%d' }}">
-          <span class="when">{{ e.date | date: "%b %-d" }}{% if e.time %} · {{ e.time }}{% endif %}</span>
-          <span class="what">{{ e.title }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-    <p class="empty" hidden>No events scheduled right now. Check back soon!</p>
-    <a href="{{ '/events/' | relative_url }}">See all events →</a>
+  <aside>
+    {% if page.cost_figure %}
+    <div class="cost-card">
+      <p class="cost-label">{{ page.cost_heading }}</p>
+      <p class="cost-figure">{{ page.cost_figure }}</p>
+      <p>{{ page.cost_text }}</p>
+    </div>
+    {% endif %}
+    <div class="card">
+      <h2>Upcoming events</h2>
+      {% assign events = site.events | sort: "date" %}
+      <ul class="event-mini" data-events>
+        {% for e in events %}
+          <li data-date="{{ e.date | date: '%Y-%m-%d' }}">
+            <span class="when">{{ e.date | date: "%b %-d" }}{% if e.time %} · {{ e.time }}{% endif %}</span>
+            <span class="what">{{ e.title }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="empty" hidden>No events scheduled right now. Check back soon!</p>
+      <a href="{{ '/events/' | relative_url }}">See all events →</a>
+    </div>
   </aside>
 </div>

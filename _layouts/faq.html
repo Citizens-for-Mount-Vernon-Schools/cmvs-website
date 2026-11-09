@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<header class="page-head">
+  <div class="wrap">
+    <h1>{{ page.title }}</h1>
+    {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+  </div>
+</header>
+<div class="wrap prose page-body">
+  {{ content }}
+  <div class="faq">
+    {% for item in page.questions %}
+      <details{% if forloop.first %} open{% endif %}>
+        <summary>{{ item.question }}</summary>
+        <div class="answer">{{ item.answer | markdownify }}</div>
+      </details>
+    {% endfor %}
+  </div>
+  <p>Have a question that isn't answered here? <a href="{{ '/contact/' | relative_url }}">Ask us.</a></p>
+</div>

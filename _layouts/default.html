@@ -5,9 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title and page.title != "Home" %}{{ page.title }} | {% endif %}{{ s.name }}</title>
-  <meta name="description" content="{{ page.intro | default: page.hero_text | default: s.tagline | strip_html | escape }}">
-  <meta property="og:title" content="{{ page.title | default: s.name | escape }}">
-  <meta property="og:description" content="{{ page.intro | default: page.hero_text | default: s.tagline | strip_html | escape }}">
+  {%- assign desc = page.intro | default: page.hero_text | default: s.tagline | strip_html | escape -%}
+  <meta name="description" content="{{ desc }}">
+  <meta property="og:title" content="{% if page.title != 'Home' %}{{ page.title | escape }} | {% endif %}YES! Schools">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:image" content="{{ '/assets/images/vote-for-our-kids.png' | absolute_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
 </head>
@@ -16,14 +21,13 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="{{ '/' | relative_url }}">
-        {% if s.logo != "" and s.logo %}<img src="{{ s.logo | relative_url }}" alt="" class="brand-logo">{% else %}<span class="brand-mark" aria-hidden="true">CMVS</span>{% endif %}
-        <span class="brand-name">{{ s.name }}</span>
+        {% if s.logo and s.logo != "" %}<img src="{{ s.logo | relative_url }}" alt="" class="brand-logo">{% else %}<img src="{{ '/assets/images/check.svg' | relative_url }}" alt="" class="brand-check">{% endif %}
+        <span class="brand-text"><span class="brand-yes">YES! Schools</span><span class="brand-name">{{ s.name }}</span></span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="site-nav" aria-label="Main">
         {% for item in site.data.navigation %}
-          {%- assign item_url = item.url | relative_url -%}
-          <a href="{{ item_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}{% if item.url == "/donate/" %} class="nav-donate"{% endif %}>{{ item.title }}</a>
         {% endfor %}
       </nav>
     </div>
@@ -33,18 +37,27 @@
     {{ content }}
   </main>
 
+  <section class="vote-band">
+    <div class="wrap vote-band-inner">
+      <img src="{{ '/assets/images/check.svg' | relative_url }}" alt="" width="64" height="64">
+      <p><strong>Vote YES by {{ s.election_date }}.</strong> Every conversation counts.</p>
+      <a class="button dark" href="{{ '/get-involved/' | relative_url }}">Get involved</a>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <div>
         <strong>{{ s.name }}</strong>
-        <p>{{ s.footer_note }}</p>
+        <p>{{ s.mailing_address }}</p>
+        {% if s.email != "" %}<p><a href="mailto:{{ s.email }}">{{ s.email }}</a></p>{% endif %}
       </div>
       <div class="footer-links">
-        {% if s.email != "" %}<a href="mailto:{{ s.email }}">{{ s.email }}</a>{% endif %}
         {% if s.facebook != "" %}<a href="{{ s.facebook }}">Facebook</a>{% endif %}
         {% if s.instagram != "" %}<a href="{{ s.instagram }}">Instagram</a>{% endif %}
       </div>
     </div>
+    <div class="wrap paid-for"><p>{{ s.paid_for_by }}</p></div>
   </footer>
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>

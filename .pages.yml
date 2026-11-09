@@ -33,22 +33,54 @@ content:
     fields:
       - { name: layout, type: string, hidden: true, default: home }
       - { name: title, type: string, hidden: true, default: Home }
+      - { name: vote_badge, label: Black vote-by label, type: string, description: "For example: Vote by February 9, 2027" }
+      - { name: hero_kicker, label: Small line above the headline, type: string }
       - { name: hero_heading, label: Big headline, type: string, required: true }
       - { name: hero_text, label: Text under the headline, type: text }
-      - { name: hero_image, label: Background photo (optional), type: image }
-      - { name: button_text, label: Button text, type: string, description: "Leave empty to hide the button" }
-      - { name: button_link, label: Button link, type: string, description: "A page on this site like /get-involved/ or a full web address" }
+      - { name: button_text, label: Black button text, type: string, description: "Leave empty to hide the button" }
+      - { name: button_link, label: Black button link, type: string, description: "A page on this site like /get-involved/ or a full web address" }
+      - { name: button2_text, label: White button text, type: string, description: "Leave empty to hide the button" }
+      - { name: button2_link, label: White button link, type: string }
+      - { name: builds_heading, label: Checklist heading, type: string }
+      - name: builds
+        label: Checklist of what the levy builds
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Item, type: string }
+          - { name: text, label: Short description, type: text }
+      - { name: cost_heading, label: Cost box small heading, type: string }
+      - { name: cost_figure, label: Cost box big text, type: string }
+      - { name: cost_text, label: Cost box details, type: text }
       - { name: body, label: Main text, type: rich-text }
 
-  - name: about
-    label: About page
+  - name: the-levy
+    label: The Levy page
     type: file
-    path: about.md
+    path: the-levy.md
     fields: &page_fields
       - { name: layout, type: string, hidden: true, default: page }
       - { name: title, label: Page title, type: string, required: true }
-      - { name: intro, label: Short intro under the title, type: string }
+      - { name: intro, label: Short intro under the title, type: text }
       - { name: body, label: Page text, type: rich-text }
+
+  - name: questions
+    label: Q&A page
+    type: file
+    path: questions.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: faq }
+      - { name: title, label: Page title, type: string, required: true }
+      - { name: intro, label: Short intro under the title, type: text }
+      - name: questions
+        label: Questions and answers
+        description: Drag to reorder. The first one shows open.
+        type: object
+        list: true
+        fields:
+          - { name: question, label: Question, type: string }
+          - { name: answer, label: Answer, type: rich-text }
+      - { name: body, label: Extra text above the questions (optional), type: rich-text }
 
   - name: events-page
     label: Events page intro
@@ -57,13 +89,19 @@ content:
     fields:
       - { name: layout, type: string, hidden: true, default: events }
       - { name: title, label: Page title, type: string, required: true }
-      - { name: intro, label: Short intro under the title, type: string }
+      - { name: intro, label: Short intro under the title, type: text }
       - { name: body, label: Extra text above the event list (optional), type: rich-text }
 
   - name: get-involved
     label: Get Involved page
     type: file
     path: get-involved.md
+    fields: *page_fields
+
+  - name: donate
+    label: Donate page
+    type: file
+    path: donate.md
     fields: *page_fields
 
   - name: contact
@@ -74,16 +112,18 @@ content:
 
   - name: settings
     label: Site settings
-    description: Group name, email, social links and sign-up links used across the whole site.
+    description: Group name, election date, email and links used across the whole site.
     type: file
     path: _data/settings.yml
     fields:
       - { name: name, label: Group name, type: string, required: true }
-      - { name: tagline, label: One-line description, type: string }
-      - { name: logo, label: Logo (optional), type: image }
+      - { name: tagline, label: One-line description (shown in search results and link previews), type: string }
+      - { name: election_date, label: Election date, type: string, description: "Shown in the yellow Vote YES band at the bottom of every page" }
       - { name: email, label: Contact email, type: string }
+      - { name: mailing_address, label: Mailing address, type: string }
+      - { name: paid_for_by, label: Paid for by line, type: string, description: "Required on campaign materials. Keep this accurate." }
+      - { name: logo, label: Logo (optional), type: image, description: "Replaces the checkmark in the top bar" }
       - { name: signup_link, label: Volunteer sign-up form link, type: string, description: "For example a Google Form link. Leave empty to hide the button." }
-      - { name: donate_link, label: Donation page link, type: string, description: "Leave empty to hide the button." }
+      - { name: donate_link, label: Online donation link, type: string, description: "Leave empty until the group sets up online giving." }
       - { name: facebook, label: Facebook page link, type: string }
       - { name: instagram, label: Instagram link, type: string }
-      - { name: footer_note, label: Footer text, type: text }

@@ -1,17 +1,21 @@
 ---
 layout: page
 title: Get Involved
-intro: There are lots of ways to help, big and small.
+intro: Levies are passed by neighbors talking to neighbors. There's a role for everyone, whether you have one hour or one evening a week.
 ---
 
-## Volunteer
+## Ways you can help
 
-We need help with events, phone calls, yard signs, social media and more. Sign up using the button below, or email us and tell us what you'd like to do.
+- **Put up a yard sign or window poster**
+- **Knock on doors or make phone calls** with a friend
+- **Talk with your neighbors,** coworkers, team parents and church or club members
+- **Share campaign posts** on social media
+- **Write a letter to the editor**
+- **Help at community events and games**
+- **Make a contribution** to the campaign
 
-## Stay informed
+Many voters haven't heard about the levy yet. Some have questions. Others will simply forget to return their ballot. Every one of those voters needs to hear from someone they know and trust. That someone could be you.
 
-Follow us on social media and come to our next event to hear the latest.
+## Sign up
 
-## Spread the word
-
-Talk with your friends and neighbors about why strong schools matter for all of us.
+Email us and tell us how you'd like to help. We'll get you connected.

@@ -8,20 +8,25 @@ layout: default
     {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
   </div>
 </header>
-<div class="wrap prose">
+<div class="wrap prose page-body">
   {{ content }}
 
   {% if page.url == "/get-involved/" %}
     <div class="actions">
-      {% if s.signup_link != "" %}<a class="button" href="{{ s.signup_link }}">Sign up to volunteer</a>{% endif %}
-      {% if s.donate_link != "" %}<a class="button secondary" href="{{ s.donate_link }}">Donate</a>{% endif %}
-      {% if s.email != "" %}<a class="button secondary" href="mailto:{{ s.email }}">Email us</a>{% endif %}
+      {% if s.signup_link != "" %}<a class="button dark" href="{{ s.signup_link }}">Sign up to volunteer</a>{% endif %}
+      {% if s.email != "" %}<a class="button {% if s.signup_link != '' %}outline{% else %}dark{% endif %}" href="mailto:{{ s.email }}?subject=I%20want%20to%20help%20with%20the%20levy">Email us to help</a>{% endif %}
     </div>
+  {% endif %}
+
+  {% if page.url == "/donate/" and s.donate_link != "" %}
+    <h2>Give online</h2>
+    <div class="actions"><a class="button dark" href="{{ s.donate_link }}">Donate online</a></div>
   {% endif %}
 
   {% if page.url == "/contact/" %}
     <div class="card contact-card">
       {% if s.email != "" %}<p><strong>Email:</strong> <a href="mailto:{{ s.email }}">{{ s.email }}</a></p>{% endif %}
+      <p><strong>Mail:</strong> Citizens for Mount Vernon Schools, {{ s.mailing_address }}</p>
       {% if s.facebook != "" %}<p><strong>Facebook:</strong> <a href="{{ s.facebook }}">{{ s.facebook }}</a></p>{% endif %}
       {% if s.instagram != "" %}<p><strong>Instagram:</strong> <a href="{{ s.instagram }}">{{ s.instagram }}</a></p>{% endif %}
     </div>

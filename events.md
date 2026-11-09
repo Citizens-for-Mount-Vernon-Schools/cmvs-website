@@ -1,5 +1,5 @@
 ---
 layout: events
 title: Events
-intro: Join us at an upcoming meeting or event. Everyone is welcome.
+intro: Come meet your neighbors, ask questions and get involved. Everyone is welcome.
 ---

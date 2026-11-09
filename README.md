@@ -10,9 +10,10 @@ A simple static website built with [Jekyll](https://jekyllrb.com) and published 
 | What | File |
 | --- | --- |
 | Home page text | `index.md` |
-| About, Get Involved, Contact | `about.md`, `get-involved.md`, `contact.md` |
+| The Levy, Get Involved, Donate, Contact | `the-levy.md`, `get-involved.md`, `donate.md`, `contact.md` |
+| Q&A questions | `questions.md` (front matter list) |
 | Events (one file per event) | `_events/` |
-| Group name, email, links, logo | `_data/settings.yml` |
+| Group name, election date, email, links, logo, "Paid for by" line | `_data/settings.yml` |
 | Menu | `_data/navigation.yml` |
 | Colors and styles | `assets/css/style.css` (colors at the top) |
 | Page templates | `_layouts/` |

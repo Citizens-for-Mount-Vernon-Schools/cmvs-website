@@ -7,7 +7,7 @@ You don't need any technical skills to update the Citizens for Mount Vernon Scho
 1. Go to **https://app.pagescms.org**.
 2. Choose **Sign in with email**, type the email address you were invited with, and click to get a code.
 3. Check your email for a 6-digit code (look in spam if it's not there) and enter it.
-4. Click the website in the list. You'll see a menu on the left: **Events**, **Home page**, **About page** and so on.
+4. Click the website in the list. You'll see a menu on the left: **Events**, **Home page**, **The Levy page**, **Q&A page** and so on.
 
 Don't have access yet? Ask a site administrator to invite your email address.
 
@@ -23,13 +23,17 @@ To **change** an event, click it in the list, make your edits and click **Save**
 
 ## Changing page text
 
-1. Click the page in the left menu (for example **About page**).
+1. Click the page in the left menu (for example **The Levy page**).
 2. Edit the text. The text box works like a simple word processor: use the toolbar for **bold**, headings, bullet lists and links.
 3. Click **Save**.
 
+## Adding or changing a question on the Q&A page
+
+Click **Q&A page**. Each question has a question line and an answer box. Click **Add an entry** at the bottom of the list to add a new one, or drag questions to reorder them. Click **Save**.
+
 ## Changing the group's email, links or logo
 
-Click **Site settings**. Here you can change the contact email, Facebook and Instagram links, the volunteer sign-up form link, the donation link and the logo. These show up across the whole site. If you leave a link empty, its button is hidden.
+Click **Site settings**. Here you can change the election date, the contact email, Facebook and Instagram links, the volunteer sign-up form link, the donation link and the logo. These show up across the whole site. If you leave a link empty, its button is hidden.
 
 ## Adding photos
 
@@ -39,6 +43,7 @@ In any photo field or in the text toolbar, click the image button, then **Upload
 
 - **Changes take 1 to 2 minutes** to appear on the live site. Refresh the page if you don't see them right away.
 - **Every change is saved in a history**, so mistakes can always be undone. If something goes wrong, contact a site administrator. Nothing is lost.
+- **Keep the "Paid for by" line accurate.** Washington law requires it on campaign materials, and it appears at the bottom of every page.
 - **Please don't edit** the "Technical settings" or anything you don't recognize. Stick to the menu items listed above.
 
 ## For site administrators
