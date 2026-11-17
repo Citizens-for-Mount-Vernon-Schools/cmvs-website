@@ -163,7 +163,7 @@ h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .25rem; }
 .paid-for p { margin: 24px 0 0; padding-top: 14px; border-top: 1px solid #333; font-size: .85rem; color: #bbb; }
 .wrap.page-body { max-width: var(--max); }
 .page-body > * { max-width: 74ch; }
-.donate-card { background: var(--yellow-soft); border: 3px solid var(--green); border-radius: var(--radius); padding: 24px 26px; margin: 24px 0 8px; }
+.donate-card { background: var(--white); border: 3px solid var(--green); border-top: 8px solid var(--yellow); border-radius: var(--radius); padding: 24px 26px; margin: 24px 0 8px; }
 .donate-card p { margin: 0 0 12px; }
 .donate-goal-label { font-family: var(--head); font-weight: 800; text-transform: uppercase; letter-spacing: .05em; font-size: .85rem; }
 .donate-goal { font-family: var(--head); font-weight: 900; font-size: clamp(2.6rem, 8vw, 3.6rem); line-height: 1; margin: 2px 0 12px !important; }
