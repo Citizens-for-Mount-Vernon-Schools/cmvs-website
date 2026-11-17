@@ -3,18 +3,18 @@ layout: default
 ---
 <section class="hero">
   <div class="wrap hero-inner">
-    <div class="hero-art">
-      <img src="{{ '/assets/images/vote-for-our-kids.png' | relative_url }}" alt="Hand-drawn smiling kid with arms raised: Vote For Our Kids" width="410" height="515">
-    </div>
     <div class="hero-copy">
       {% if page.vote_badge %}<p class="vote-badge">{{ page.vote_badge }}</p>{% endif %}
       {% if page.hero_kicker %}<p class="kicker">{{ page.hero_kicker }}</p>{% endif %}
-      <h1>{{ page.hero_heading }}</h1>
+      <h1><img class="hero-check" src="{{ '/assets/images/check.svg' | relative_url }}" alt="" width="72" height="72">{{ page.hero_heading }}</h1>
       <p class="lead">{{ page.hero_text }}</p>
       <div class="actions">
         {% if page.button_text and page.button_text != "" %}<a class="button dark" href="{% include link.html url=page.button_link %}">{{ page.button_text }}</a>{% endif %}
         {% if page.button2_text and page.button2_text != "" %}<a class="button light" href="{% include link.html url=page.button2_link %}">{{ page.button2_text }}</a>{% endif %}
       </div>
+    </div>
+    <div class="hero-art">
+      <img src="{{ '/assets/images/vote-for-our-kids-green.png' | relative_url }}" alt="Hand-drawn smiling kid with arms raised: Vote For Our Kids" width="410" height="515">
     </div>
   </div>
 </section>
