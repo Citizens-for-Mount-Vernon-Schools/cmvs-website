@@ -13,6 +13,15 @@ layout: default
     <div class="donate-card">
       {% if s.donate_goal and s.donate_goal != "" %}<p class="donate-goal-label">Our campaign goal</p>
       <p class="donate-goal">{{ s.donate_goal }}</p>{% endif %}
+      {% if s.donate_raised and s.donate_raised != "" and s.donate_goal and s.donate_goal != "" %}
+        {%- assign raised_num = s.donate_raised | remove: "$" | remove: "," | plus: 0 -%}
+        {%- assign goal_num = s.donate_goal | remove: "$" | remove: "," | plus: 0 -%}
+        {%- if goal_num > 0 -%}{%- assign pct = raised_num | times: 100 | divided_by: goal_num -%}{%- if pct > 100 -%}{%- assign pct = 100 -%}{%- endif -%}{%- else -%}{%- assign pct = 0 -%}{%- endif -%}
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ pct }}" aria-label="Raised so far">
+          <div class="progress-fill" style="width: {{ pct }}%"></div>
+        </div>
+        <p class="progress-text"><strong>{{ s.donate_raised }} raised</strong> of our {{ s.donate_goal }} goal ({{ pct }}%)</p>
+      {% endif %}
       {% if s.donate_embed and s.donate_embed != "" %}
       <p>See our progress and give securely below. It only takes a couple of minutes.</p>
       {% else %}
