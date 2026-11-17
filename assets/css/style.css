@@ -189,3 +189,21 @@ h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .25rem; }
   .hero-art { max-width: 170px; margin: 0 auto; }
 }
 .donate-goal, .donate-goal-label { color: var(--green); }
+
+/* More yellow accents */
+.hero { border-bottom-color: var(--yellow); }
+.hero h1 .marker { background: linear-gradient(transparent 62%, var(--yellow) 62%, var(--yellow) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .06em; }
+.hero-art { position: relative; }
+.hero-art::before { content: ""; position: absolute; left: 8%; right: 8%; top: 12%; aspect-ratio: 1; background: var(--yellow); opacity: .45; border-radius: 50%; z-index: 0; }
+.hero-art img { position: relative; z-index: 1; }
+.hero .button.dark { background: var(--yellow); border-color: var(--yellow); color: var(--black); }
+.hero .button.dark:hover { background: var(--yellow); filter: brightness(1.05); }
+.section-title, .prose h2 { padding-bottom: 6px; background: linear-gradient(var(--yellow), var(--yellow)) left bottom / 56px 4px no-repeat; }
+.build { border-left-color: var(--yellow); }
+.page-head { border-bottom-color: var(--yellow); }
+.event-date { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+.faq details[open] summary { background: var(--yellow-soft); border-left: 6px solid var(--yellow); }
+.data-table tr:last-child td { background: var(--yellow-soft); }
+.card { border-top: 6px solid var(--yellow); }
+.hero h1 { display: block; }
+.hero-art::before { opacity: 1; background: #fbe199; }
