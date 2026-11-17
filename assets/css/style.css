@@ -171,12 +171,21 @@ h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .25rem; }
 .zeffy-thermometer { height: 64px; margin: 0 0 14px; max-width: 520px; }
 .zeffy-thermometer iframe { width: 100%; height: 100%; border: 0; display: block; background: transparent; }
 
-/* Hero on green: headline in gold, drawing on a yellow sign */
-.hero h1 { color: var(--yellow); }
-.hero .kicker { color: var(--white); }
-.hero .button.light { background: transparent; color: var(--white); border-color: var(--white); }
-.hero .button.light:hover { background: rgba(255,255,255,.12); }
+/* Home banner: design C, green with the drawing as a soft watermark */
+.hero { position: relative; }
+.hero-inner { grid-template-columns: 1fr; padding-top: 56px; position: relative; }
+.hero-copy { position: relative; z-index: 1; padding-bottom: 64px; max-width: 960px; }
+.hero h1 { color: var(--white); display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.hero h1 .hero-check { width: clamp(52px, 8vw, 84px); height: auto; background: var(--yellow); border-radius: 10px; padding: 6px; }
+.hero .kicker { color: var(--yellow); }
 .hero .button.dark { background: var(--yellow); border-color: var(--yellow); color: var(--black); }
 .hero .button.dark:hover { filter: brightness(1.06); background: var(--yellow); }
-.hero-art { background: var(--yellow); border-radius: 14px 14px 0 0; padding: 18px 18px 0; }
+.hero .button.light { background: transparent; color: var(--white); border-color: var(--white); }
+.hero .button.light:hover { background: rgba(255,255,255,.12); }
+.hero-art { position: absolute; right: 20px; bottom: 0; width: 380px; opacity: .16; pointer-events: none; }
+.hero-art img { display: block; width: 100%; margin: 0; }
+@media (max-width: 760px) {
+  .hero-art { width: 230px; right: -30px; opacity: .12; }
+  .hero-copy { order: 0; padding-bottom: 36px; }
+}
 .donate-goal, .donate-goal-label { color: var(--green); }
