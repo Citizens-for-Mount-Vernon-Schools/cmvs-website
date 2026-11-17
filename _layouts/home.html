@@ -6,7 +6,7 @@ layout: default
     <div class="hero-copy">
       {% if page.vote_badge %}<p class="vote-badge">{{ page.vote_badge }}</p>{% endif %}
       {% if page.hero_kicker %}<p class="kicker">{{ page.hero_kicker }}</p>{% endif %}
-      <h1><img class="hero-check" src="{{ '/assets/images/check.svg' | relative_url }}" alt="" width="72" height="72">{{ page.hero_heading }}</h1>
+      <h1>{{ page.hero_heading }}</h1>
       <p class="lead">{{ page.hero_text }}</p>
       <div class="actions">
         {% if page.button_text and page.button_text != "" %}<a class="button dark" href="{% include link.html url=page.button_link %}">{{ page.button_text }}</a>{% endif %}

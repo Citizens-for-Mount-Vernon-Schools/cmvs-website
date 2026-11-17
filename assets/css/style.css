@@ -176,7 +176,6 @@ h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .25rem; }
 .hero-inner { grid-template-columns: minmax(0, 1fr) minmax(220px, 330px); gap: 32px; align-items: end; padding-top: 48px; }
 .hero-copy { padding-bottom: 56px; }
 .hero h1 { color: var(--green); display: flex; align-items: center; gap: 18px; }
-.hero h1 .hero-check { width: clamp(52px, 8vw, 80px); height: auto; background: var(--yellow); border-radius: 10px; padding: 6px; }
 .hero .kicker { color: var(--green); }
 .hero .lead { color: var(--ink); }
 .vote-badge { background: var(--yellow); color: var(--black); }
