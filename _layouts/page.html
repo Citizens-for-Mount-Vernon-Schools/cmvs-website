@@ -13,9 +13,19 @@ layout: default
     <div class="donate-card">
       {% if s.donate_goal and s.donate_goal != "" %}<p class="donate-goal-label">Our campaign goal</p>
       <p class="donate-goal">{{ s.donate_goal }}</p>{% endif %}
+      {% if s.donate_embed and s.donate_embed != "" %}
+      <p>See our progress and give securely below. It only takes a couple of minutes.</p>
+      {% else %}
       <p>Give securely online in a couple of minutes.</p>
       <a class="button dark" href="{{ s.donate_link }}" target="_blank" rel="noopener">Donate online</a>
+      {% endif %}
     </div>
+  {% endif %}
+  {% if page.url == "/donate/" and s.donate_embed and s.donate_embed != "" %}
+    <div class="zeffy-embed">
+      <iframe title="Donation form powered by Zeffy" src="{{ s.donate_embed }}" allowpaymentrequest allowtransparency="true" loading="lazy"></iframe>
+    </div>
+    <p class="embed-fallback">Form not loading? <a href="{{ s.donate_link }}" target="_blank" rel="noopener">Open the donation page in a new tab</a>.</p>
   {% endif %}
   {{ content }}
 
