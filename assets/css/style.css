@@ -169,6 +169,5 @@ h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .25rem; }
 .zeffy-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .embed-fallback { font-size: .95rem; color: var(--muted); }
 @media (max-width: 560px) { .zeffy-embed { height: 1450px; } }
-.progress { height: 22px; background: var(--white); border: 3px solid var(--black); border-radius: 999px; overflow: hidden; margin: 4px 0 8px; }
-.progress-fill { height: 100%; background: var(--black); min-width: 6px; }
-.progress-text { font-size: 1rem; }
+.zeffy-thermometer { background: var(--white); border: 2px solid var(--black); border-radius: var(--radius); overflow: hidden; height: 150px; margin: 4px 0 14px; }
+.zeffy-thermometer iframe { width: 100%; height: 100%; border: 0; display: block; }
