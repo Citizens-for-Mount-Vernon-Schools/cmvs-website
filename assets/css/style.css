@@ -35,7 +35,7 @@ h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .25rem; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; }
 .brand { flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 12px; color: var(--white); text-decoration: none; }
 .brand:hover { background: none; }
-.brand-check { width: 44px; height: 44px; background: var(--yellow); border-radius: 6px; padding: 3px; }
+.brand-check { width: 40px; height: 40px; }
 .brand-logo { height: 48px; width: auto; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-yes { font-family: var(--head); font-weight: 900; font-size: 1.35rem; color: var(--yellow); letter-spacing: .01em; }
