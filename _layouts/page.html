@@ -9,6 +9,14 @@ layout: default
   </div>
 </header>
 <div class="wrap prose page-body">
+  {% if page.url == "/donate/" and s.donate_link != "" %}
+    <div class="donate-card">
+      {% if s.donate_goal and s.donate_goal != "" %}<p class="donate-goal-label">Our campaign goal</p>
+      <p class="donate-goal">{{ s.donate_goal }}</p>{% endif %}
+      <p>Give securely online in a couple of minutes.</p>
+      <a class="button dark" href="{{ s.donate_link }}" target="_blank" rel="noopener">Donate online</a>
+    </div>
+  {% endif %}
   {{ content }}
 
   {% if page.url == "/get-involved/" %}
@@ -19,10 +27,6 @@ layout: default
     </div>
   {% endif %}
 
-  {% if page.url == "/donate/" and s.donate_link != "" %}
-    <h2>Give online</h2>
-    <div class="actions"><a class="button dark" href="{{ s.donate_link }}">Donate online</a></div>
-  {% endif %}
 
   {% if page.url == "/contact/" %}
     <div class="card contact-card">
