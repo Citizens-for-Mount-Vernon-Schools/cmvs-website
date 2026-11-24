@@ -10,17 +10,22 @@ layout: default
 </header>
 <div class="wrap prose page-body">
   {% if page.url == "/donate/" and s.donate_link != "" %}
-    <div class="donate-card">
-      {% if s.donate_goal and s.donate_goal != "" %}<p class="donate-goal-label">Our campaign goal</p>
-      <p class="donate-goal">{{ s.donate_goal }}</p>{% endif %}
-      {% if s.donate_thermometer and s.donate_thermometer != "" %}
+    <section class="donate-card" aria-label="Donate to the campaign">
+      {% if s.donate_goal != "" %}
+        <p class="donate-goal-label">Our campaign goal</p>
+        <p class="donate-goal">{{ s.donate_goal }}</p>
+      {% endif %}
+      {% if s.donate_thermometer != "" %}
         <div class="zeffy-thermometer">
-          <iframe title="Fundraising progress powered by Zeffy" src="{{ s.donate_thermometer }}" allowtransparency="true"></iframe>
+          <iframe title="Fundraising progress powered by Zeffy"
+                  src="{{ s.donate_thermometer }}"
+                  loading="lazy"
+                  allowtransparency="true"></iframe>
         </div>
       {% endif %}
       <p>Give securely online in a couple of minutes.</p>
       <a class="button dark" href="{{ s.donate_link }}" target="_blank" rel="noopener">Donate online</a>
-    </div>
+    </section>
   {% endif %}
   {{ content }}
 
