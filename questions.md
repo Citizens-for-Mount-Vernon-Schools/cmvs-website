@@ -18,7 +18,7 @@ questions:
   - question: Who decided what's in the levy?
     answer: More than 25 parents, coaches, faculty and community leaders on the district's Outdoor Athletic Advisory Committee studied our facilities for months, compared them with similar schools across the region, and reached a unanimous recommendation. A community survey followed, and 77% of 619 respondents favored these improvements.
   - question: Will the community be able to use the new facilities?
-    answer: Yes, that's part of the plan. Increasing community use of district facilities is one of the reasons the Board gave for the levy, and the turf field is planned for baseball, softball, soccer, band and community use. Our stadium also hosts graduation, games and community events.
+    answer: Yes, that's part of the plan. Increasing community use of district facilities is one of the reasons the Board gave for the levy, and the turf field is planned for baseball, softball, soccer, band, graduation and community use.
   - question: Who is Citizens for Mount Vernon Schools?
     answer: We're a volunteer group of Mount Vernon parents, grandparents, alumni, coaches, business owners and neighbors. We are not the school district. We formed to help pass this levy.
   - question: How do I register to vote or check my registration?
