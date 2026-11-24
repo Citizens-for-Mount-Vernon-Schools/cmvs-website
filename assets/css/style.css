@@ -196,10 +196,18 @@ h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .25rem; }
 .hero .button.dark { background: var(--yellow); border-color: var(--yellow); color: var(--black); }
 .hero .button.dark:hover { background: var(--yellow); filter: brightness(1.05); }
 .section-title, .prose h2 { padding-bottom: 6px; background: linear-gradient(var(--yellow), var(--yellow)) left bottom / 56px 4px no-repeat; }
-.build { border-left-color: var(--yellow); }
 .page-head { border-bottom-color: var(--yellow); }
 .event-date { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
 .faq details[open] summary { background: var(--yellow-soft); border-left: 6px solid var(--yellow); }
 .data-table tr:last-child td { background: var(--yellow-soft); }
 .card { border-top: 6px solid var(--yellow); }
 .hero h1 { display: block; }
+
+/* What it builds: football-field cards */
+.build-grid { counter-reset: b; gap: 20px; }
+.build { counter-increment: b; position: relative; border: 3px solid #fff; outline: 3px solid var(--green); border-radius: 8px; padding: 28px 22px 32px; color: #fff; margin: 3px;
+  background: repeating-linear-gradient(90deg, transparent 0 22px, rgba(255,255,255,.55) 22px 24px) bottom / 100% 10px no-repeat, repeating-linear-gradient(90deg, transparent 0 22px, rgba(255,255,255,.55) 22px 24px) top / 100% 10px no-repeat, repeating-linear-gradient(0deg, #0a5a2a 0 30px, #0d6631 30px 60px); }
+.build::after { content: counter(b) "0"; position: absolute; right: 14px; bottom: 14px; font-family: var(--head); font-weight: 900; font-size: 2.6rem; line-height: 1; color: rgba(255,255,255,.35); }
+.build-head img { width: 30px; height: 30px; }
+.build h3 { color: #fff; text-transform: uppercase; letter-spacing: .04em; text-shadow: 0 2px 0 rgba(0,0,0,.25); }
+.build p { color: rgba(255,255,255,.92); padding-right: 52px; }
